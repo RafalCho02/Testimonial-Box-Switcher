@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #8e9eab, #eef2f3);
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.testimonial-container {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 15px;
+  padding: 50px 80px;
+  max-width: 768px;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out, scaleUp 0.5s ease-in-out;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-container:hover {
+  transform: scale(1.05);
+}
+
+.fa-quote {
+  color: rgba(0, 0, 0, 0.1);
+  font-size: 40px;
+  position: absolute;
+  top: 20px;
+  opacity: 0.8;
+  animation: rotateQuotes 4s infinite alternate ease-in-out;
+}
+
+.fa-quote-right {
+  right: 20px;
+}
+
+.fa-quote-left {
+  left: 20px;
+}
+
+.testimonial {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  animation: fadeText 1s ease-in-out;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user .user-image {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+  animation: bounceImage 2s infinite ease-in-out;
+}
+
+.user .user-image:hover {
+  transform: scale(1.1);
+}
+
+.user .user-details {
+  margin-left: 15px;
+  animation: slideIn 1s ease-in-out;
+}
+
+.user .username {
+  font-weight: bold;
+  color: #333;
+}
+
+.user .role {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #777;
+}
+
+.progress-bar {
+  background-color: #4a90e2;
+  height: 4px;
+  width: 100%;
+  animation: grow 10s linear infinite;
+  transform-origin: left;
+  margin-bottom: 20px;
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateQuotes {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes bounceImage {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    padding: 20px 30px;
+  }
+
+  .fa-quote {
+    display: none;
+  }
+}
